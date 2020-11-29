@@ -5,9 +5,10 @@ import styled from "styled-components";
 const StyledContainer = styled.div`
   display: grid;
   grid-template-columns: [intro] 2fr [intro-end links] 1fr [links-end free] 2.75fr [free-end];
-  grid-template-rows: [content] 1fr [content-end pith] 3fr [pith-end];
+  grid-template-rows: [content] 1.5fr [content-end pith] 2fr [pith-end];
 
   max-height: 100vh;
+  height: 100vh;
   color: #e2e2e2;
 
   background-color: #0f0f0f;
@@ -43,6 +44,10 @@ const StyledIntro = styled.div`
     margin: 0;
     max-width: 350px;
   }
+
+  display: flex;
+  flex-flow: wrap;
+  align-content: flex-end;
 `;
 
 const StyledLinks = styled.div`
@@ -67,13 +72,17 @@ const StyledLinks = styled.div`
   a {
     width: 100%;
     display: inline-block;
-    margin-bottom: 25px;
+    margin-top: 25px;
     color: #e2e2e2;
   }
 
   a:visited {
     color: #7c7c7c;
   }
+
+  display: flex;
+  flex-flow: wrap;
+  align-content: flex-end;
 `;
 
 const StyledPith = styled.div`
@@ -113,6 +122,12 @@ export default function Home() {
   return (
     <div>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/global.css" />
+        <meta
+          name="description"
+          content="Pith is an experimental space for productive online discussions. Try it out, read more about it. It's open source, free to use, and lightweight."
+        />
         <title>Pith</title>
         <link rel="icon" href="/pith-icon.ico" />
       </Head>
@@ -131,7 +146,8 @@ export default function Home() {
           </StyledLinks>
           <StyledPith>
             <StyledPithContent>
-              <StyledPithText>Pith</StyledPithText>
+              {/*
+                          <StyledPithText>Pith</StyledPithText>*/}
             </StyledPithContent>
           </StyledPith>
         </StyledContainer>
